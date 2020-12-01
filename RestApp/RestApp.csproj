@@ -65,41 +65,57 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="EmploymentContracts.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>RestDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Food.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>RestDB.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderList.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>RestDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Orders.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>RestDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Positions.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+    <Compile Include="RestDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RestDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RestDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>RestDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Types.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>RestDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>RestDB.tt</DependentUpon>
     </Compile>
     <Compile Include="WaiterTables.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>RestDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="windows\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\ChiefWindow.xaml.cs">
+      <DependentUpon>ChiefWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\WeiterWindow.xaml.cs">
+      <DependentUpon>WeiterWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WShift.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>RestDB.tt</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="AutorizationWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -107,22 +123,24 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="AutorizationWindow.xaml.cs">
+      <DependentUpon>AutorizationWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="windows\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\ChiefWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\WeiterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -140,33 +158,53 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <EntityDeploy Include="RestDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RestDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RestDB.edmx.diagram">
+      <DependentUpon>RestDB.edmx</DependentUpon>
+    </None>
+    <None Include="source\Блюда.csv" />
+    <None Include="source\contracts\Трудовой договор.pdf" />
+    <None Include="source\Пользователи.csv" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model1.Context.tt">
+    <Resource Include="source\photo\Ausni.jpg" />
+    <Resource Include="source\photo\Avasica.jpg" />
+    <Resource Include="source\photo\Bethala.jpg" />
+    <Resource Include="source\photo\Blakeot.jpg" />
+    <Resource Include="source\photo\Blakery.jpg" />
+    <Resource Include="source\photo\Bobam.jpg" />
+    <Content Include="RestDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>RestDB.edmx</DependentUpon>
+      <LastGenOutput>RestDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model1.tt">
+    <Content Include="RestDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>RestDB.edmx</DependentUpon>
+      <LastGenOutput>RestDB.cs</LastGenOutput>
     </Content>
+    <Content Include="source\photo\Brooketha.jfif" />
+    <Resource Include="source\photo\Edex.jpg" />
+    <Resource Include="source\photo\Elley.jpg" />
+    <Resource Include="source\photo\Fretha.jpg" />
+    <Resource Include="source\photo\Louiecha.jpg" />
+    <Resource Include="source\photo\Lukethan.jpg" />
+    <Resource Include="source\photo\Mato.jpg" />
+    <Resource Include="source\photo\Ollay.jpg" />
+    <Resource Include="source\photo\Oscas.png" />
+    <Resource Include="source\photo\Thokie.jpg" />
+    <Resource Include="source\photo\Tomseph.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

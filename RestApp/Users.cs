@@ -25,7 +25,7 @@ namespace RestApp
         public int ID { get; set; }
         public string SurName { get; set; }
         public string FirstName { get; set; }
-        public int PositionFK { get; set; }
+        public string Position { get; set; }
         public string Status { get; set; }
         public string ImageSouce { get; set; }
         public string Login { get; set; }
@@ -35,7 +35,6 @@ namespace RestApp
         public virtual ICollection<EmploymentContracts> EmploymentContracts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }
-        public virtual Positions Positions { get; set; }
         public virtual WaiterTables WaiterTables { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WShift> WShift { get; set; }
